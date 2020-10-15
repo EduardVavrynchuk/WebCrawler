@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <meta charset="UTF-8">
+    <title>WEB-crawler</title>
+</head>
+<body>
+    <div id="main">
+        <div class="form-group col-md-9">
+            <div class="form-inline">
+                <h3>Create crawler</h3>
+
+                <label for="start-url">Start url:</label>
+                <input type="text" class="form-control" id="start-url"/>
+
+                <label for="max-threads">Max threads:</label>
+                <input type="text" class="form-control" id="max-threads"/>
+
+                <label for="search-word">Key word:</label>
+                <input type="text" class="form-control" id="search-word"/>
+
+                <label for="max-urls">Max urls for scan:</label>
+                <input type="text" class="form-control" id="max-urls"/>
+
+                <input type="button" class="btn btn-primary" value="Start crawler" id="start-crawler-btn"/>
+            </div>
+        </div>
+    </div>
+    <div id="result" class="form-group col-md-12">
+        <h3>Crawler info</h3>
+        <button class="btn btn-primary col-md-2" id="refresh-info-btn"><span class="glyphicon glyphicon-refresh"></span>Refresh</button>
+    </div>
+
+    <div class="form-group col-md-12">
+
+        <ul class="list-group" id="crawler-list"></ul>
+
+        <ul class="list-group" hidden="true">
+            <li class="panel panel-default" id="crawler-list-item">
+                <p class="panel-heading">
+                    <a href="#" class="pull-right"><b><span did="status-crawler"></span></b></a>
+                    <a href="#"><b><span did="crawler-id"></span></b></a>
+                </p>
+                <div class="panel-body">
+                    <p>Max threads: <span did="max-threads"></span></p>
+                    <p>Search word: <span did="search-word"></span></p>
+                    <p>Found/Max scanned urls: <span did="scanned-urls"></span></p>
+                    <p>Processed urls: <span did="processed-urls"></span></p>
+                    <details><summary><b>Result</b></summary><pre did="crawl-result"></pre></details>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
