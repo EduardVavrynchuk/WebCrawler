@@ -57,7 +57,7 @@ public class Crawler extends ICrawler {
 	@Override
 	public int progress() {
 		int amountFinished = 0;
-		for(Future<?> future : futures) {
+		for (Future<?> future : futures) {
 			if (future.isDone()) {
 				amountFinished++;
 			}

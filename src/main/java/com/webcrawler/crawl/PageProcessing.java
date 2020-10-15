@@ -14,19 +14,11 @@ import java.util.concurrent.Callable;
 public class PageProcessing implements Callable {
 
 	private static final Log LOGGER = LogFactory.getLog(PageProcessing.class);
-	public enum PageProcessingStatus {
-		QUEUE,
-		PROCESSING,
-		FINISHED,
-		ERROR
-	}
-
 	public String link;
 	public transient String searchWord;
 	public int amountWords = 0;
 	public PageProcessingStatus status;
 	public String msg;
-
 	public PageProcessing(String url, String searchWord) {
 		this.link = url;
 		this.searchWord = searchWord;
@@ -74,6 +66,13 @@ public class PageProcessing implements Callable {
 		}
 
 		return words;
+	}
+
+	public enum PageProcessingStatus {
+		QUEUE,
+		PROCESSING,
+		FINISHED,
+		ERROR
 	}
 
 }
