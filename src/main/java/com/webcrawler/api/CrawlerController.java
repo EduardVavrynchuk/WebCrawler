@@ -12,27 +12,27 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class CrawlerController {
 
-	@Autowired
-	private CrawlerService crawlerService;
+    @Autowired
+    private CrawlerService crawlerService;
 
-	private Gson gson = new Gson();
+    private Gson gson = new Gson();
 
-	@PostMapping(path = "/start", produces = "text/html;charset=UTF-8")
-	public ResponseEntity<String> startCrawler(@RequestParam("url") String url,
-											   @RequestParam("maxThreads") Integer maxThreads,
-											   @RequestParam("searchText") String searchText,
-											   @RequestParam("maxUrls") Integer maxUrls) {
-		if (crawlerService.startCrawler(url, maxThreads, searchText, maxUrls)) {
-			return ResponseEntity.ok("Crawler instance was created!");
-		} else {
-			return ResponseEntity.ok("Error while crawler instance creating");
-		}
-	}
+    @PostMapping(path = "/start", produces = "text/html;charset=UTF-8")
+    public ResponseEntity<String> startCrawler(@RequestParam("url") String url,
+                                               @RequestParam("maxThreads") Integer maxThreads,
+                                               @RequestParam("searchText") String searchText,
+                                               @RequestParam("maxUrls") Integer maxUrls) {
+        if (crawlerService.startCrawler(url, maxThreads, searchText, maxUrls)) {
+            return ResponseEntity.ok("Crawler instance was created!");
+        } else {
+            return ResponseEntity.ok("Error while crawler instance creating");
+        }
+    }
 
-	@GetMapping(path = "/info", produces = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
-	public String getCrawlerInfo() {
-		return gson.toJson(crawlerService.getCrawlerInfo());
-	}
+    @GetMapping(path = "/info", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getCrawlerInfo() {
+        return gson.toJson(crawlerService.getCrawlerInfo());
+    }
 
 }
