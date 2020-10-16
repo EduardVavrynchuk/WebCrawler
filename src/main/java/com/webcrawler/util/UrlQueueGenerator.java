@@ -40,8 +40,6 @@ public class UrlQueueGenerator {
                     }
                 }
             }
-            System.out.println("Main queue = " + mainQueue.size());
-            System.out.println("Sub queue = " + subQueue.size());
             return linksOnPage.size();
         } catch (IOException ioe) {
             LOGGER.warn("HTTP request is not successful");
