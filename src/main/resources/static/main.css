@@ -1,0 +1,18 @@
+.pre-scroll {
+    width: 100%;
+    height: auto;
+    max-height: 50%;
+    overflow: auto;
+    background-color: #eeeeee;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.pre_max_height_half_screen {
+    max-height: 50vh;
+}
+
+.inherit {
+    width: inherit;
+}
