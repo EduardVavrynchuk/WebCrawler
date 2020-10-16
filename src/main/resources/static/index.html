@@ -7,6 +7,26 @@
     <script src="main.js"></script>
     <meta charset="UTF-8">
     <title>WEB-crawler</title>
+    <style>
+        .pre-scroll {
+            width: 100%;
+            height: auto;
+            max-height: 50%;
+            overflow: auto;
+            background-color: #eeeeee;
+            word-break: break-all;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+
+        .pre_max_height_half_screen {
+            max-height: 50vh;
+        }
+
+        .inherit {
+            width: inherit;
+        }
+    </style>
 </head>
 <body>
     <div id="main">
@@ -50,7 +70,7 @@
                     <p>Search word: <span did="search-word"></span></p>
                     <p>Found/Max scanned urls: <span did="scanned-urls"></span></p>
                     <p>Processed urls: <span did="processed-urls"></span></p>
-                    <details><summary><b>Result</b></summary><pre did="crawl-result"></pre></details>
+                    <summary><b>Result</b></summary><pre did="crawl-result" class="pre-scroll inherit pre_max_height_half_screen"></pre>
                 </div>
             </li>
         </ul>
